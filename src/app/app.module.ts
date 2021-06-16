@@ -8,21 +8,34 @@ import { FlickerSearchComponent } from './components/flicker-search/flicker-sear
 import {MatInputModule} from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FlickerTagsComponent } from './components/flicker-tags/flicker-tags.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpParams } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { HomeComponent } from './pages/home/home.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
+import { FlickerImageComponent } from './components/flicker-image/flicker-image.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FlickerSearchComponent,
-    FlickerTagsComponent
+    FlickerTagsComponent,
+    HomeComponent,
+    GalleryComponent,
+    FlickerImageComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+
   ],
-  providers: [],
+  providers: [HttpParams],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

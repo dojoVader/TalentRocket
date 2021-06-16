@@ -1,0 +1,7 @@
+:host {
+    width: auto;
+    margin: 1%;
+    &::last-child {
+        margin-right: 0px;
+    }
+}

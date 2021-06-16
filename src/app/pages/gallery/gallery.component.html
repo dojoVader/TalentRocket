@@ -1,0 +1,8 @@
+<!-- Main Conponent for the application -->
+<div id="main-entry" class="container-fluid">
+    <div class="row">
+        <div class="d-flex flex-wrap">
+            <app-flicker-image [flickerData]="item" *ngFor="let item of result"></app-flicker-image>
+        </div>
+    </div>
+</div>

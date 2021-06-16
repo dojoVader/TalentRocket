@@ -1,11 +1,12 @@
 <div class="flicker-search p-4 row">
-    <form class="example-form col-lg-12">
+    <form class="example-form col-lg-12" [formGroup]="searchForm">
         <mat-form-field class="example-full-width col-lg-7">
             <mat-label>{{searchTag}}</mat-label>
-            <input matInput [placeholder]="searchTag" value="">
+            <input matInput [placeholder]="searchTag" formControlName="searchText" value="">
+            <mat-error *ngIf="searchForm.controls.searchText.errors">Please enter search value... </mat-error>
         </mat-form-field>
-        <button class="ml-2" mat-button>Reset</button>
-        <button mat-raised-button color="primary">Submit</button>
+        <button class="ml-2" mat-button (click)="doReset()">Reset</button>
+        <button [disabled]="!searchForm.valid" (click)="doSearch()" mat-raised-button color="primary">Submit</button>
     </form>
 
     <h2 class="font-weight-bold mt-3">Requests</h2>

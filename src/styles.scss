@@ -37,3 +37,13 @@ body {
 .flicker-text {
     font-size: 1.5em;
 }
+
+.empty-state {
+    padding-left: 10px;
+    /* border: 1px solid #f3eded; */
+    padding: 1%;
+    box-shadow: 0px 0px 2px 0px white;
+    color: #b9acac;
+    border-radius: 2px;
+    font-size: 1.25em;
+}

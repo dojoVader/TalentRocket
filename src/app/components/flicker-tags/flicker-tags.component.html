@@ -1,21 +1,26 @@
-<div class="flicker-image-tag col-lg-4 p-3 ">
-    <div>
-        <h2 class="text-uppercase p-2">search tag</h2>
+<div class="flicker-image-tag image-bg col-lg-12 col-md-12 p-3">
+    <div class="flex flex-row meta-holder">
+        <img [src]="backgroundImage" alt="Image" class="img-flicker">
+        <div class="flicker-search-tag-panel">
+            <h2 class="text-uppercase">{{ tag }}</h2>
+            <p class="center-text flicker-views mt-4">{{ flickerData[0].views }}</p>
+        </div>
     </div>
     <div class="flex flex-row">
-        <p class="text-center flicker-text block mt-3 mb-2 font-weight-bold">owners name</p>
+        <p class="text-center flicker-text block mt-3 mb-2 font-weight-bold">{{flickerData[0].ownername}}</p>
         <div class="d-flex justify-content-between p-4">
             <div>
                 <h3>Uploaded</h3>
-                <p>21.09.2018</p>
+                <p class="text-center">{{flickerData[0].dateupload | date:'M.d.yy'}}</p>
+
             </div>
             <div>
-                <h3>Uploaded</h3>
-                <p>21.09.2018</p>
+                <h3>Taken</h3>
+                <p class="text-center">{{flickerData[0].datetaken | date:'M.d.yy'}}</p>
             </div>
         </div>
         <div class="flex flex-row mt-3 mb-2 text-center">
-            <p><a href="">Show all images</a></p>
+            <p><a [routerLink]="['/images',flickerData[0].owner]">Show all images</a></p>
         </div>
     </div>
 </div>

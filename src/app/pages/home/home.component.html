@@ -1,0 +1,18 @@
+<!-- Main Conponent for the application -->
+<div id="main-entry" class="container-fluid">
+    <app-flicker-search></app-flicker-search>
+
+    <div class="row">
+        <div class="col-lg-12 d-flex flex-row p-4" id='flicker-results' *ngIf="results.length">
+            <div class="col-lg-12 d-flex flex-wrap">
+                <app-flicker-tags [tag]="item?.searchText" [flickerData]="item.photos.photo" *ngFor="let item of results; index as i;">
+                    {{item | json}}
+                </app-flicker-tags>
+            </div>
+
+        </div>
+        <div class="col-lg-12 d-flex flex-row px-4 empty-state" id='flicker-results' *ngIf="!results.length">
+            <h1 style="margin-left: 10px;">Flicker Search Tag</h1>
+        </div>
+    </div>
+</div>

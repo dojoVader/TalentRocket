@@ -1,5 +1,9 @@
 :host {
-    width: 100%
+    width: 25%;
+    margin-right: 2%;
+    &::last-child {
+        margin-right: 0px;
+    }
 }
 
 .flicker-image-tag {
@@ -9,7 +13,14 @@
 
 h2 {
     background: #FFFFFF;
-    color: #b9a4a4;
+    color: #545252;
+    width: auto;
+    display: inline-block;
+    margin-bottom: 0px;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0px 10px;
 }
 
 a {
@@ -26,4 +37,35 @@ h3 {
         font-weight: 500;
         color: black;
     }
+}
+
+.meta-holder {
+    height: 150px
+}
+
+.image-bg {
+    position: relative;
+}
+
+.img-flicker {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 90;
+    height: 150px;
+}
+
+.flicker-search-tag-panel {
+    position: relative;
+    z-index: 91;
+}
+
+.flicker-views {
+    z-index: 91;
+    position: relative;
+    font-size: 2.4em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
