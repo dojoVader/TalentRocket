@@ -11,9 +11,9 @@
 
     <h2 class="font-weight-bold mt-3">Requests</h2>
     <ul class="d-flex flex-row">
-        <li><a href="">Sorted By</a></li>
-        <li><a href="">Number of Views</a></li>
-        <li><a href="">Date when Photo was taken</a></li>
-        <li><a href="">Date when Photo was submitted</a></li>
+        <li>Sorted by</li>
+        <li><a href="#" [ngClass]="{selected: currentSortType === 'views' }" (click)="sort({type: 'views'})">Number of Views</a></li>
+        <li><a href="#" [ngClass]="{selected: currentSortType === 'datetaken' }" (click)="sort({type: 'datetaken'})">Date when Photo was taken</a></li>
+        <li><a href="#" [ngClass]="{selected: currentSortType === 'datesubmitted' }" (click)="sort({type: 'datesubmitted'})">Date when Photo was submitted</a></li>
     </ul>
 </div>

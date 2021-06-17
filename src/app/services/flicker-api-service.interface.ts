@@ -36,7 +36,7 @@ export interface FlickerPhotoPayload{
   datetakengranularity: number;
   datetakenunknown:number;
   ownername:string;
-  views:number;
+  views:string;
   url_q:string;
   url_sq:string;
   url_o:string;

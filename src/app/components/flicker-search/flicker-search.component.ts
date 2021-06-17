@@ -1,8 +1,9 @@
 import { FlickerSearchConfiguration } from './../../services/flicker-api-service.interface';
-import { FlickerSearchService } from './flicker-search-service';
+import { FlickerSearchService, SortTypeInteface } from './flicker-search-service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FlickerApiServiceService } from 'src/app/services/flicker-api-service.service';
+
 
 @Component({
   selector: 'app-flicker-search',
@@ -13,6 +14,7 @@ export class FlickerSearchComponent implements OnInit {
 
   public searchTag: string = 'Please Enter a Search tag'
   public searchForm: FormGroup;
+  public currentSortType!: string;
 
 
   constructor(
@@ -49,6 +51,11 @@ export class FlickerSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  sort(sort: SortTypeInteface){
+    this.currentSortType = sort.type
+    this.flickerSearchEvent.raiseSortEvent(sort);
   }
 
 
